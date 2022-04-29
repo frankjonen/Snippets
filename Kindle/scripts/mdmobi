@@ -1,0 +1,12 @@
+#! /bin/bash
+
+file="$1"
+infile="$file".md
+outfile="$file".epub
+mobifile="$file".mobi
+
+pandoc "$infile" -o "$outfile" && \
+kindlegen "$outfile" -o "$mobifile" && \
+echo -e "\n\n MOBI File created without issues. You win.\n\n"
+
+open -a "Send to Kindle" "$mobifile"

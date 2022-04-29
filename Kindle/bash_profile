@@ -1,0 +1,8 @@
+# TOOL PATH
+# — — — — — — — — — — — — — — — — — — — — — — — —
+export PATH=$PATH:$HOME/scripts
+
+# KINDLE SETUP
+# — — — — — — — — — — — — — — — — — — — — — — — —
+export KINDLEBIN=/Applications/Kindle\ Previewer\ 3.app/Contents/lib/fc/bin/
+export PATH=$PATH:$KINDLEBIN
