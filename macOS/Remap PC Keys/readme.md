@@ -22,4 +22,6 @@ This `plist` file makes the following changes
 | Scroll Lock  | F14              |
 | Pause        | F15              |
 
+# Known Issues
 
+On *MAX Keyboards* **Blackbird** keyboard you need to hold <kbd>SHIFT</kbd> when pressing <kbd>ScrLk</kbd> or <kbd>Pause</kbd>. Only <kbd>PrtSc</kbd> works without shift.
