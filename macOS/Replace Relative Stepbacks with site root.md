@@ -20,13 +20,13 @@ find . -name "*.bup" -delete
 ### For single steps (`../`)
 
 ```bash
-find . -name '*.html' | xargs sed -i .bup 's/\.\.\//\//g
+find . -name '*.html' | xargs sed -i .bup 's/\.\.\//\//g'
 ```
 
 ### For double steps (`../../`)
 
 ```bash
-find . -name '*.html' | xargs sed -i .bak 's/(\.\.\/){2}/\//g
+find . -name '*.html' | xargs sed -i .bak 's/(\.\.\/){2}/\//g'
 ```
 
 ### Deeper?
