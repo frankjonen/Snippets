@@ -1,8 +1,7 @@
 # Miscellaneous Tools
 
-> Too broad of a use case to fit into the other categories.
+Too broad of a use case to fit into the other categories.
 
----
 
 ## ARA - The Aspect Ratio Calculator
 
