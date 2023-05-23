@@ -1,0 +1,56 @@
+#!/bin/bash
+
+echo "ARA, The Aspect Ratio Calculator"
+
+# Function to calculate the greatest common divisor (GCD)
+gcd() {
+  local a=$1
+  local b=$2
+  while [[ $b -ne 0 ]]; do
+    local temp=$b
+    b=$((a % b))
+    a=$temp
+  done
+  echo $a
+}
+
+# Function to calculate the aspect ratio
+aspect_ratio() {
+  local ratio=$1
+  local width=$2
+  local height=$3
+  
+  # Check if ratio is in the format "x:y"
+  if [[ $ratio == *":"* ]]; then
+    local ratio_w=$(cut -d ":" -f 1 <<< $ratio)
+    local ratio_h=$(cut -d ":" -f 2 <<< $ratio)
+    
+    # Calculate the value of "x" or "y" depending on which one is missing
+    if [[ $width == "x" ]]; then
+      local ratio_x=$((height * ratio_w / ratio_h))
+      echo "x: $ratio_x"
+    elif [[ $height == "x" ]]; then
+      local ratio_x=$((width * ratio_h / ratio_w))
+      echo "x: $ratio_x"
+    else
+      echo "Invalid input format!"
+      exit 1
+    fi
+  else
+    echo "Invalid input format!"
+    exit 1
+  fi
+}
+
+# Parse command-line arguments
+if [[ $# -eq 2 ]]; then
+  aspect_ratio $1 $2 "x"
+elif [[ $# -eq 3 ]]; then
+  aspect_ratio $1 $2 $3
+else
+  echo "I'd appreciate input."
+  echo
+  echo "Usage: ara <ratio> <width> <height>"
+  echo "Example: ara 16:9 1024 x"
+  exit 1
+fi
