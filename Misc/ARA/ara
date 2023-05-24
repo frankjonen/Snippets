@@ -1,6 +1,34 @@
 #!/bin/bash
 
-echo "ARA, The Aspect Ratio Calculator"
+# Formatting
+label="$(tput setaf 7;tput bold)"
+reset="$(tput sgr0)"
+red="$(tput setaf 1;tput bold)"
+yellow="$(tput setaf 3;tput bold)"
+magenta="$(tput setaf 5)"
+cyan="$(tput setaf 6)"
+green="$(tput setaf 2)"
+
+l(){
+	echo "$label${1}$reset"
+}
+
+y() {
+	echo "$yellow${1}$reset"
+}
+
+m() {
+	echo "$magenta${1}$reset"
+}
+
+c() {
+	echo "$cyan${1}$reset"
+}
+
+g() {
+	echo "$green${1}$reset"
+}
+
 
 # Function to calculate the greatest common divisor (GCD)
 gcd() {
@@ -41,6 +69,22 @@ aspect_ratio() {
     exit 1
   fi
 }
+
+# Check if the help option is specified
+if [[ $1 == "-h" || $1 == "--h" ]]; then
+  echo
+  echo "         $(y "ARA - The Aspect Ratio Calculator")"
+  echo "      ————————————————————————————————————————"
+  echo "      ARA solves for $(l "x"). Put the $(l "x") where you"
+  echo "      want the value for $(l "x") to be calculated."
+  echo
+  echo "      $(y "Usage:") $(l "ara") $(m "<ratio>") $(c "<width>") $(g "<height>")"
+  echo
+  echo "      $(y "Example 1") $(l "ara") $(m "16:9") $(c "1024") $(g "x")"
+  echo "      $(y "Example 2:") $(l "ara") $(m "16:9") $(c "x") $(g "576")"
+  echo
+  exit 0
+fi
 
 # Parse command-line arguments
 if [[ $# -eq 2 ]]; then
