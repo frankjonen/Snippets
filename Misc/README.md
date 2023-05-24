@@ -1,10 +1,9 @@
 # Miscellaneous Tools
 
-> Too broad of a use case to fit into the other categories.
+Too broad of a use case to fit into the other categories.
 
----
 
-## ARA - The Aspect Ratio Calculator
+## [ARA - The Aspect Ratio Calculator](ARA)
 
 Does just that. You hand it the aspect ratio and the number you got, place the desired number as `x` and that's it. 
 
